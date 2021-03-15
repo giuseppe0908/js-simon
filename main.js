@@ -31,6 +31,7 @@ $(document).ready(function() {
   setTimeout(function(){
     while (numeri_utente.length < 5) {
       var darenum =  parseInt(prompt("inserisci i numeri che ricordi"));
+      //creo array vuoto per controllare che l'utente non scrive numeri doppi
        if (numeri_utente.includes(darenum)) {
            alert("bastardo");
        }else {
