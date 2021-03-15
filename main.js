@@ -21,10 +21,21 @@ $(document).ready(function() {
      console.log(numeri);
 
   }
+
     //CREO IL TIMER CHE FA SCOMPARIRE I NUMERI RANDOM
-    setTimeout(function () {
-      $('#numeri-random').hide();
-    },3000);
+    var count = 30;
+    var id = setInterval(function () {
+     if (count > 0) {
+      $('#tempo').text(count);
+     } else {
+     clearInterval(id);
+     $('#tempo').hide();
+     $('#numeri-random').hide();
+     $('h2').hide();
+     }
+     count--;
+    }, 1000);
+
 
     //L'UTENTE CERCA DI ricordare i numeri
 
@@ -33,7 +44,7 @@ $(document).ready(function() {
       var darenum =  parseInt(prompt("inserisci i numeri che ricordi"));
       //creo array vuoto per controllare che l'utente non scrive numeri doppi
        if (numeri_utente.includes(darenum)) {
-           alert("bastardo");
+           alert("Non puoi selezionare due numeri uguali inserisci un numero diverso");
        }else {
          numeri_utente.push(darenum);
    //verifico se il numero inserito dall'utente è ugule ai nmeri random lo salvo nel dom
@@ -41,11 +52,16 @@ $(document).ready(function() {
            note.push(darenum);
           }
         }
-        console.log(note);
-        $('#num').text("Hai indovinato" + " " + note.length + " " + "numeri." + " " + "I numeri sono:" + " " + note);
+        if (note == 0) {
+          $('#num').text("Hai indovinato" + " " + note.length + " " + "numeri."  + note);
+        }else if (note == 1) {
+          $('#num').text("Hai indovinato" + " " + note.length + " " + "numero." + " " + "Il numero è:" + " " + note);
+        }else {
+          console.log(note);
+          $('#num').text("Hai indovinato" + " " + note.length + " " + "numeri." + " " + "I numeri sono:" + " " + note);
+        }
     }
-
-  },4000);
+  },32000);
 
 })
 

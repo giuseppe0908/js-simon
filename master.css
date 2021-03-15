@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  text-align: center;
+  font-family: fantasy;
+  background-color: cyan;
+}
+h1{
+  font-size: 40px;
+  margin-top: 40px;
+}
+h2{
+  font-size: 30px;
+  margin-top: 80px;
+}
+#numeri-random, #num{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
